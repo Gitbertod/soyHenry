@@ -9,7 +9,47 @@
   - breadthFirstForEach: recorre el árbol siguiendo el orden breadth first (BFS)
   El ábrol utilizado para hacer los tests se encuentra representado en la imagen bst.png dentro del directorio homework.
 */
-function BinarySearchTree() {}
+function BinarySearchTree(value) {
+   this.value = value;
+   this.left = null;
+   this.right= null; 
+} 
+
+BinarySearchTree.prototype.insert = function (value){
+
+   if(value < this.value ){
+      if(!this.left){
+         this.left = new BinarySearchTree (value);
+         return value;
+      }else{
+         this.left.insert(value);
+      }
+   }else{
+      // Es mayor
+      if(!this.right){
+         this.right = new BinarySearchTree(value);
+         return value
+      }else{
+         this.right.insert(value);
+      }
+   }
+};
+
+
+BinarySearchTree.prototype.size = function (){
+
+
+
+
+
+};
+
+
+
+
+BinarySearchTree.prototype.contains = function (){};
+BinarySearchTree.prototype.depthFirstForEach = function (){};
+BinarySearchTree.prototype.breadthFirstForEach = function (){};
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
